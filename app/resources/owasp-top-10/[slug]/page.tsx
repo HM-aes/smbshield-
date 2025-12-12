@@ -110,8 +110,9 @@ const sandboxComponents = {
   "a01-broken-access-control": <A01Sandbox />,
 };
 
-export default function ThreatDetailPage({ params }: { params: { slug: string } }) {
-  const threat = owaspData.find((t) => t.id === params.slug);
+export default function ThreatDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = React.use(params);
+  const threat = owaspData.find((t) => t.id === slug);
 
   if (!threat) {
     notFound();

@@ -84,8 +84,9 @@ const llmData = [
   },
 ]
 
-export default function ThreatDetailPage({ params }: { params: { slug: string } }) {
-  const threat = llmData.find((t) => t.slug === params.slug);
+export default function ThreatDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = React.use(params);
+  const threat = llmData.find((t) => t.slug === slug);
 
   if (!threat) {
     notFound();

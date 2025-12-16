@@ -53,56 +53,92 @@ const riskData: RiskData[] = [
 // Defense content for sticky scroll
 const defenseContent = [
   {
-    title: "Weekly Intelligence Briefing",
+    title: "SMBShield Weekly Intelligence",
     description:
-      "We get it—you're building a business, not a security department. Between product launches, hiring, and keeping customers happy, who has time to track every new AI vulnerability? That's exactly why we created the Weekly Intelligence Briefing. Every Monday morning, we deliver a concise, jargon-free summary of what actually matters to your business: the latest OWASP LLM vulnerabilities, emerging GenAI threats targeting your sector, and compliance deadlines you can't afford to miss. No 50-page whitepapers. No fear-mongering. Just actionable intelligence that respects your time and budget. Join 2,400+ SMB professionals who start their week informed and protected.",
+      "We get it—you're building a business, not a security department. Between product launches, hiring, and keeping customers happy, who has time to track every new AI vulnerability? That's exactly why we created the Weekly Intelligence Briefing. Every Monday morning, we deliver a concise, jargon-free summary (formatted as a clean email) of what actually matters: upcoming AI security conferences, community meetups, and the latest critical vulnerabilities. No 50-page whitepapers. Just the events and alerts you need to stay connected and protected. Join SMB professionals who start their week with our intelligence report.",
     content: (
-      <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-blue-900 to-blue-950 rounded-lg overflow-hidden">
-        <div className="w-full h-full p-5 flex flex-col">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-2">
-              <BookOpen className="h-6 w-6 text-blue-400" />
-              <h3 className="text-xl font-bold text-white">Weekly Briefing</h3>
-            </div>
-            <span className="text-sm text-blue-300 bg-blue-500/20 px-3 py-1 rounded-full">Dec 9, 2025</span>
-          </div>
-          <div className="flex-1 bg-gray-900/50 rounded-lg p-4 border border-blue-500/20 space-y-3">
-            <div className="flex items-start gap-3 pb-3 border-b border-gray-700/50">
-              <div className="w-2.5 h-2.5 bg-red-500 rounded-full mt-1.5 animate-pulse" />
-              <div className="flex-1">
-                <div className="flex items-center justify-between">
-                  <h4 className="text-white font-semibold text-base">🚨 Critical: React CVE-2025-55182</h4>
-                  <span className="text-sm text-red-400 bg-red-500/20 px-2 py-0.5 rounded">URGENT</span>
+      <div className="h-full w-full flex flex-col bg-gray-950 rounded-lg overflow-hidden border border-gray-800 shadow-xl font-sans">
+        {/* Email Header */}
+        <div className="bg-gray-900 p-4 border-b border-gray-800">
+            <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
                 </div>
-                <p className="text-gray-400 text-sm mt-1">RCE vulnerability in Server Components. Patch now to Next.js 15.5.7+</p>
-              </div>
+                <div className="text-gray-500 text-xs">Inbox (1)</div>
             </div>
-            <div className="flex items-start gap-3 pb-3 border-b border-gray-700/50">
-              <div className="w-2.5 h-2.5 bg-yellow-500 rounded-full mt-1.5" />
-              <div className="flex-1">
-                <h4 className="text-white font-semibold text-base">⚡ LLM01 Attacks Up 67% in Q4</h4>
-                <p className="text-gray-400 text-sm mt-1">Prompt injection targeting customer service bots. See mitigation checklist.</p>
-              </div>
+          <div className="space-y-1">
+            <div className="flex items-baseline gap-2 text-sm">
+                <span className="text-gray-500 font-medium w-12 text-right">From:</span>
+                <span className="text-gray-200 font-semibold">SMBShield Intelligence &lt;intel@smbshield.com&gt;</span>
             </div>
-            <div className="flex items-start gap-3 pb-3 border-b border-gray-700/50">
-              <div className="w-2.5 h-2.5 bg-blue-400 rounded-full mt-1.5" />
-              <div className="flex-1">
-                <h4 className="text-white font-semibold text-base">📋 EU AI Act: 90-Day Deadline</h4>
-                <p className="text-gray-400 text-sm mt-1">High-risk AI systems must register by March 2026. Download our checklist.</p>
-              </div>
+            <div className="flex items-baseline gap-2 text-sm">
+                <span className="text-gray-500 font-medium w-12 text-right">To:</span>
+                <span className="text-gray-200">You</span>
             </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2.5 h-2.5 bg-green-400 rounded-full mt-1.5" />
-              <div className="flex-1">
-                <h4 className="text-white font-semibold text-base">💡 Community Tip of the Week</h4>
-                <p className="text-gray-400 text-sm mt-1">"We blocked 3 prompt injections using the validation pattern from Issue #47" — SaaS founder, Berlin</p>
-              </div>
+            <div className="flex items-baseline gap-2 text-sm">
+                <span className="text-gray-500 font-medium w-12 text-right">Subject:</span>
+                <span className="text-white font-medium">📅 This Week: AI Safety Summit & Critical CVE Alert</span>
             </div>
           </div>
-          <div className="mt-3 flex items-center justify-between text-sm">
-            <span className="text-gray-500">📧 Delivered every Monday 8am CET</span>
-            <span className="text-blue-400 font-medium">2,847 subscribers</span>
-          </div>
+        </div>
+
+        {/* Email Body */}
+        <div className="flex-1 p-6 bg-gray-950 overflow-y-auto text-gray-300">
+           <p className="mb-4 text-sm">Hi Team,</p>
+           <p className="mb-6 text-sm leading-relaxed">Here is your weekly digest of AI security events and critical updates for the week of December 9th.</p>
+           
+           {/* Community Calendar Section */}
+           <div className="mb-6 bg-blue-900/20 rounded-lg p-4 border border-blue-500/20">
+                <h4 className="text-blue-400 font-bold text-sm mb-3 flex items-center gap-2">
+                    <span className="text-lg">🗓️</span> Community Calendar
+                </h4>
+                <div className="space-y-3">
+                    <div className="flex gap-3 items-start">
+                        <div className="bg-gray-900 p-1.5 rounded border border-gray-700 text-center min-w-[50px]">
+                            <div className="text-[10px] text-gray-500 uppercase font-bold">DEC</div>
+                            <div className="text-lg font-bold text-blue-400 leading-none">15</div>
+                        </div>
+                        <div>
+                            <div className="font-semibold text-sm text-gray-200">AI Engineer Summit</div>
+                            <div className="text-xs text-gray-500">San Francisco • Booth #42</div>
+                        </div>
+                    </div>
+                     <div className="flex gap-3 items-start">
+                        <div className="bg-gray-900 p-1.5 rounded border border-gray-700 text-center min-w-[50px]">
+                            <div className="text-[10px] text-gray-500 uppercase font-bold">JAN</div>
+                            <div className="text-lg font-bold text-blue-400 leading-none">22</div>
+                        </div>
+                        <div>
+                            <div className="font-semibold text-sm text-gray-200">OWASP AppSec EU</div>
+                            <div className="text-xs text-gray-500">Lisbon • Main Stage Talk</div>
+                        </div>
+                    </div>
+                     <div className="flex gap-3 items-start">
+                        <div className="bg-gray-900 p-1.5 rounded border border-gray-700 text-center min-w-[50px]">
+                            <div className="text-[10px] text-gray-500 uppercase font-bold">FRI</div>
+                            <div className="text-lg font-bold text-blue-400 leading-none">WK</div>
+                        </div>
+                        <div>
+                            <div className="font-semibold text-sm text-gray-200">Community Safety Meetup</div>
+                            <div className="text-xs text-gray-500">Online • 4:00 PM CET</div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+
+           {/* Security Alert Section */}
+           <div className="mb-4">
+                <h4 className="font-bold text-sm mb-2 text-white">⚠️ Security Highlight</h4>
+                <p className="text-sm text-gray-400 mb-2">New detailed guide available for <span className="font-semibold text-red-400">CVE-2025-8821</span> affecting LangChain output parsers.</p>
+                <div className="text-blue-400 text-sm font-medium hover:underline cursor-pointer">Read full analysis →</div>
+           </div>
+           
+           <div className="mt-8 pt-4 border-t border-gray-800 text-xs text-gray-500">
+                Study safe,<br/>
+                The SMBShield Team
+           </div>
         </div>
       </div>
     ),
@@ -147,7 +183,7 @@ const defenseContent = [
         </div>
         <div className="mt-3 flex items-center justify-between text-sm">
           <span className="text-gray-500">💬 Avg response: 2.3 seconds</span>
-          <span className="text-purple-400 font-medium">12,000+ questions answered</span>
+          <span className="text-purple-400 font-medium">Questions answered 24/7</span>
         </div>
       </div>
     ),
@@ -215,7 +251,7 @@ const defenseContent = [
   {
     title: "Threat Intelligence Dashboard",
     description:
-      "Stop flying blind. The Threat Dashboard shows you exactly what attacks are hitting businesses like yours—right now. We aggregate data from security researchers, OWASP feeds, and our community of 2,400+ SMBs to show trends before they become headlines. See which attack vectors are trending in your region (DACH, Nordics, Benelux, UK). Get severity ratings calibrated for SMB impact, not enterprise. Know exactly which of your tools are affected when a new CVE drops. Most importantly: understand if you're getting safer over time with your personalized security score.",
+      "Stop flying blind. The Threat Dashboard shows you exactly what attacks are hitting businesses like yours—right now. We aggregate data from security researchers, OWASP feeds, and our growing community of SMBs to show trends before they become headlines. See which attack vectors are trending in your region (DACH, Nordics, Benelux, UK). Get severity ratings calibrated for SMB impact, not enterprise. Know exactly which of your tools are affected when a new CVE drops. Most importantly: understand if you're getting safer over time with your personalized security score.",
     content: (
       <div className="h-full w-full flex flex-col bg-gradient-to-br from-green-900 to-green-950 rounded-lg overflow-hidden p-5">
         <div className="flex items-center justify-between mb-4">

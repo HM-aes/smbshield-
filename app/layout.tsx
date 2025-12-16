@@ -4,8 +4,10 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { ScrollProgress } from "@/components/animated/scroll-progress";
 import { SmoothScroll } from "@/components/animated/smooth-scroll";
+import { ScrollToTop } from "@/components/scroll-to-top";
 import { Navbar } from "@/components/navigation/navbar";
 import { Footer } from "@/components/navigation/footer";
+import { UserProvider } from "@/contexts/user-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,10 +31,13 @@ export default function RootLayout({
           disableTransitionOnChange={false}
         >
           <SmoothScroll>
-          <ScrollProgress />
-          <Navbar />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
+            <UserProvider>
+              <ScrollProgress />
+              <ScrollToTop />
+              <Navbar />
+              <main className="min-h-screen">{children}</main>
+              <Footer />
+            </UserProvider>
           </SmoothScroll>
         </ThemeProvider>
       </body>

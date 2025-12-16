@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import type { LucideIcon } from "lucide-react"
 import {
@@ -21,6 +22,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { cn } from "@/lib/utils"
 
@@ -173,19 +175,39 @@ export function Navbar() {
       )}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between gap-4">
+        <div className="flex h-20 items-center justify-between gap-6">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground transition-transform duration-200 group-hover:scale-105">
-              <Shield className="h-6 w-6" />
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="relative flex h-12 w-12 items-center justify-center transition-transform duration-200 group-hover:scale-105">
+              <Image
+                src="/images/logos/smbshield-logo.png"
+                alt="SMBShield Logo"
+                width={48}
+                height={48}
+                className="drop-shadow-[0_0_12px_rgba(217,119,6,0.5)]"
+                priority
+              />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent dark:from-blue-400 dark:to-indigo-400 transition-transform duration-200 group-hover:translate-x-px">
+            <span 
+              className="text-2xl font-bold text-white transition-all duration-300"
+              style={{ 
+                transition: "transform 0.3s ease, text-shadow 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-2px)";
+                e.currentTarget.style.textShadow = "0 8px 16px rgba(217, 119, 6, 0.4), 0 4px 8px rgba(217, 119, 6, 0.3)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.textShadow = "none";
+              }}
+            >
               SMBShield
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden flex-1 items-center justify-center space-x-1 md:flex">
+          <div className="hidden flex-1 items-center justify-center space-x-2 md:flex">
             {navItems.map((item) =>
               item.children ? (
                 <div
@@ -203,15 +225,15 @@ export function Navbar() {
                       <button
                         type="button"
                         className={cn(
-                          "group inline-flex items-center rounded-lg px-4 py-2 text-sm font-medium transition-colors",
+                          "group inline-flex items-center px-4 py-2 text-sm tracking-wide transition-all duration-200",
                           isNavItemActive(item)
-                            ? "bg-accent text-accent-foreground"
-                            : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                            ? "text-amber-400"
+                            : "text-gray-400 hover:text-amber-400"
                         )}
                       >
                         <span>{item.name}</span>
                         {item.badge && (
-                          <span className="ml-2 rounded-full bg-blue-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-blue-700 dark:bg-blue-500/20 dark:text-blue-300">
+                          <span className="ml-2 rounded-full bg-amber-500/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-400">
                             {item.badge}
                           </span>
                         )}
@@ -270,16 +292,16 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "rounded-lg px-4 py-2 text-sm font-medium transition-colors",
+                    "px-4 py-2 text-sm tracking-wide transition-all duration-200",
                     isNavItemActive(item)
-                      ? "bg-accent text-accent-foreground"
-                      : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                      ? "text-amber-400"
+                      : "text-gray-400 hover:text-amber-400"
                   )}
                 >
                   <span className="flex items-center">
                     {item.name}
                     {item.badge && (
-                      <span className="ml-2 rounded-full bg-blue-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-blue-700 dark:bg-blue-500/20 dark:text-blue-300">
+                      <span className="ml-2 rounded-full bg-amber-500/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-400">
                         {item.badge}
                       </span>
                     )}
@@ -292,9 +314,14 @@ export function Navbar() {
           {/* Right side - Theme Toggle & CTA */}
           <div className="hidden items-center space-x-3 md:flex">
             <ThemeToggle />
-            <Button asChild size="default" className="px-5 font-semibold shadow-sm">
-              <Link href="/dashboard">Dashboard</Link>
-            </Button>
+            <Link href="/dashboard">
+              <HoverBorderGradient
+                containerClassName="rounded-full"
+                className="flex items-center bg-black px-5 py-2 text-white font-semibold"
+              >
+                Dashboard
+              </HoverBorderGradient>
+            </Link>
           </div>
 
           {/* Mobile menu button */}

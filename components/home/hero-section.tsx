@@ -42,11 +42,11 @@ export function HeroSection() {
           <FadeIn delay={0.2} triggerOnScroll={false}>
             <h1 className="mb-10 text-3xl tracking-tight sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight sm:leading-snug lg:leading-relaxed">
               <span className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 bg-clip-text text-transparent drop-shadow-sm">
-                SMB Shield
+                AI Security Intelligence
               </span>
               <br />
               <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
-                AI-Powered Security Intelligence for European SMBs
+                Built for SMBs
               </span>
             </h1>
           </FadeIn>
@@ -54,11 +54,11 @@ export function HeroSection() {
           {/* Description */}
           <FadeIn delay={0.4} triggerOnScroll={false}>
             <p className="mb-10 text-base text-muted-foreground sm:text-lg lg:text-xl leading-relaxed">
-              Stay ahead of OWASP Top 10, LLM vulnerabilities, and GenAI threats.
-              <br />
-              Get weekly security briefings tailored to your sector, then chat with
+              From the OWASP LLM Top 10 to EU AI Act compliance — we monitor 127 threat sources
               <br className="hidden sm:block" />
-              <span className="text-amber-500 font-medium">Professor Shield</span> 24/7 to dive deeper into any threat.
+              so you don't have to. Built by security specialists with
+              <br className="hidden sm:block" />
+              <span className="text-amber-500 font-medium">Google Trust & Safety</span> and <span className="text-amber-500 font-medium">Meta</span> backgrounds.
             </p>
           </FadeIn>
 
@@ -76,7 +76,7 @@ export function HeroSection() {
                   asChild
                 >
                   <Link href="/dashboard">
-                    Get Weekly Briefings Free
+                    Subscribe to Weekly Intel
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>

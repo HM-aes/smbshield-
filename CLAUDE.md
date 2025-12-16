@@ -88,15 +88,11 @@ components/
 │   ├── stagger-container.tsx  # Stagger children animations
 │   ├── scale-hover.tsx     # Scale and lift on hover
 │   ├── animated-counter.tsx   # Animated number counter
-│   ├── loading-skeleton.tsx   # Loading states with shimmer
 │   └── scroll-progress.tsx    # Page scroll progress bar
 ├── home/                   # Homepage sections (HeroSection, StatsSection, etc.)
-├── blog/                   # Blog components (BlogCard)
 ├── dashboard/              # Dashboard-specific components
 │   ├── app-sidebar.tsx     # Full sidebar with navigation (~1000 lines)
-│   ├── stat-card.tsx       # Dashboard stat cards with counters
-│   ├── error-boundary.tsx  # Error boundary wrapper
-│   └── sidebar-skeleton.tsx   # Loading state for sidebar
+│   └── error-boundary.tsx  # Error boundary wrapper
 ├── navigation/             # Navbar and Footer
 ├── transitions/            # PageTransition wrapper
 ├── providers/              # ThemeProvider wrapper
@@ -383,27 +379,22 @@ export default function MyPage() {
 }
 ```
 
-### Dashboard Page with Stats
+### Dashboard Page with User Context
 ```tsx
 "use client"
 
-import { DashboardStatCard } from "@/components/dashboard/stat-card"
 import { useUser } from "@/contexts/user-context"
+import { Card } from "@/components/ui/card"
 
 export default function DashboardPage() {
-  const { user } = useUser()
+  const { user, updateUserTier } = useUser()
 
   return (
     <div className="space-y-6">
-      <div className="grid gap-4 md:grid-cols-3">
-        <DashboardStatCard
-          title="Total Threats"
-          value={127}
-          trend="up"
-          change="+12%"
-          description="Compared to last month"
-        />
-      </div>
+      <Card className="p-6">
+        <h2>Welcome, {user.name}</h2>
+        <p>Current tier: {user.tier}</p>
+      </Card>
     </div>
   )
 }

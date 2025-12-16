@@ -7,6 +7,7 @@ import { TechStackGrid } from "@/components/home/tech-stack-grid";
 import { FeatureFeed } from "@/components/home/feature-feed";
 import { PricingSection } from "@/components/home/pricing-section";
 import { CTASection } from "@/components/home/cta-section";
+import { ContactSection } from "@/components/home/contact-section";
 import { PageTransition } from "@/components/transitions/page-transition";
 import { OwaspTeaser } from "@/components/home/owasp-teaser";
 
@@ -19,9 +20,10 @@ export default function HomePage() {
         <GenAiManifesto />
         <TechStackGrid />
         <FeatureFeed />
+        <CTASection />
         <OwaspTeaser />
         <PricingSection />
-        <CTASection />
+        <ContactSection />
       </div>
     </PageTransition>
   );

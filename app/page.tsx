@@ -1,6 +1,7 @@
 "use client";
 
 import { HeroSection } from "@/components/home/hero-section";
+import { FounderCredibility } from "@/components/home/founder-credibility";
 import { AIGuardianRiskCard } from "@/components/home/ai-guardian-risk-card";
 import { GenAiManifesto } from "@/components/home/gen-ai-manifesto";
 import { TechStackGrid } from "@/components/home/tech-stack-grid";
@@ -16,6 +17,7 @@ export default function HomePage() {
     <PageTransition>
       <div className="flex flex-col">
         <HeroSection />
+        <FounderCredibility />
         <AIGuardianRiskCard />
         <GenAiManifesto />
         <TechStackGrid />

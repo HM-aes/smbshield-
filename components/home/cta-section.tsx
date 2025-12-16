@@ -140,7 +140,7 @@ export function CTASection() {
                   e.currentTarget.style.transform = "translateY(0) scale(1)";
                 }}
               >
-                Start Your Free Trial
+                Get Your Free Security Briefing
                 <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover/btn:translate-x-1" />
               </Link>
             </div>

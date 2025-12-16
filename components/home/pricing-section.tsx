@@ -72,6 +72,9 @@ const Switch = ({ billingCycle, setBillingCycle }: { billingCycle: string; setBi
 }
 
 function PricingCard({ plan, billingCycle, index }: { plan: typeof pricingPlans[0]; billingCycle: string; index: number }) {
+  // Custom CTA text based on plan
+  const ctaText = plan.name === "Free" ? "Start Learning Free" : "Get Weekly Intel";
+  
   return (
     <FadeIn delay={(index + 1) * 0.1}>
       <div 
@@ -148,13 +151,13 @@ function PricingCard({ plan, billingCycle, index }: { plan: typeof pricingPlans[
             ))}
           </ul>
           
-          {/* CTA Button - styled identically */}
+          {/* CTA Button - tier-specific text */}
           <div className="mt-8">
             <Link
               href="/dashboard"
               className="block w-full rounded-full bg-gradient-to-r from-amber-500 to-amber-600 py-4 text-center font-semibold text-black shadow-lg shadow-amber-500/25 transition-all duration-300 hover:from-amber-600 hover:to-amber-700 hover:shadow-amber-500/40"
             >
-              Get Started
+              {ctaText}
             </Link>
           </div>
         </div>

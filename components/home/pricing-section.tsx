@@ -9,29 +9,32 @@ import { FadeIn } from "../animated/fade-in"
 const pricingPlans = [
   {
     name: "Free",
+    tier: "Awareness",
     monthlyPrice: "€0",
     yearlyPrice: "€0",
-    description: "Perfect for getting started",
+    description: "Stay informed on AI security threats",
     features: [
-      "Monthly security briefings",
-      "OWASP Top 10 updates",
-      "Basic threat intelligence",
-      "Email delivery",
+      "Monthly threat digest",
+      "OWASP Top 10 guide",
+      "1 compliance template",
+      "Community access",
     ],
     popular: false,
   },
   {
     name: "Pro",
+    tier: "Defense",
     monthlyPrice: "€49",
     yearlyPrice: "€39",
-    description: "For proactive security",
+    description: "Proactive protection for your business",
+    badge: "Founding Member Pricing",
     features: [
       "Weekly security briefings",
-      "Priority intelligence",
-      "GenAI threat analysis",
-      "EU compliance updates",
-      "Dashboard access",
-      "Custom alerts",
+      "Professor Shield AI (unlimited)",
+      "Full template library",
+      "Threat dashboard",
+      "EU compliance tracker",
+      "Priority support",
     ],
     popular: true,
   },
@@ -111,10 +114,18 @@ function PricingCard({ plan, billingCycle, index }: { plan: typeof pricingPlans[
             </div>
           )}
           
-          {/* Header - styled identically */}
+          {/* Header with tier label */}
           <div className={`rounded-2xl border border-amber-500/10 bg-amber-500/5 p-6 text-center ${plan.popular ? "mt-4" : ""}`}>
+            <span className="inline-block px-3 py-1 mb-2 text-xs font-semibold uppercase tracking-wider text-amber-400 bg-amber-500/10 rounded-full">
+              {plan.tier}
+            </span>
             <h3 className="text-2xl font-bold text-white">{plan.name}</h3>
             <p className="mt-2 text-sm text-gray-400">{plan.description}</p>
+            {plan.badge && (
+              <p className="mt-3 text-xs font-medium text-green-400 bg-green-500/10 px-3 py-1 rounded-full inline-block">
+                🔒 {plan.badge}
+              </p>
+            )}
           </div>
           
           {/* Price - styled identically */}

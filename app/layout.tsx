@@ -8,6 +8,7 @@ import { ScrollToTop } from "@/components/scroll-to-top";
 import { Navbar } from "@/components/navigation/navbar";
 import { Footer } from "@/components/navigation/footer";
 import { UserProvider } from "@/contexts/user-context";
+import { ExitIntentPopup } from "@/components/exit-intent-popup";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,6 +35,7 @@ export default function RootLayout({
             <UserProvider>
               <ScrollProgress />
               <ScrollToTop />
+              <ExitIntentPopup />
               <Navbar />
               <main className="min-h-screen">{children}</main>
               <Footer />

@@ -23,18 +23,23 @@ export function FounderCredibility() {
         >
           {/* Section Label */}
           <p className="mb-4 text-sm font-medium uppercase tracking-widest text-amber-500/80">
-            Built by Security Veterans
+            Built by Industry Veterans
           </p>
 
           {/* Main Message */}
           <h2 className="mb-6 text-2xl font-semibold text-foreground md:text-3xl">
-            Built by Security Veterans Who've Seen It All
+            Years of Experience in Major Multinationals
           </h2>
 
-          <p className="mx-auto mb-10 max-w-2xl text-base text-muted-foreground leading-relaxed md:text-lg">
-            Our founder spent years in AI Trust & Safety at Google and content moderation at Meta, 
-            watching firsthand how AI systems fail. SMBShield exists because every business deserves 
-            enterprise-grade threat intelligence — without the enterprise price tag.
+          <p className="mx-auto mb-10 max-w-3xl text-base text-muted-foreground leading-relaxed md:text-lg">
+            Our founder brings diverse expertise from <span className="text-amber-500 font-medium">Google</span> (Trust & Safety), 
+            <span className="text-amber-500 font-medium"> Meta</span> (Content Associate), and 
+            <span className="text-amber-500 font-medium"> Apple</span> (Customer Specialist — resolving complex cases, 
+            educating clients on products, safety, policies & data protection). 
+            At <span className="text-amber-500 font-medium">Reuters</span>, trained professionals at leading investment banks 
+            including UBS, Barclays, and Saudi investment institutions. 
+            Also served as sports trainer for professional fighters competing in UFC and Bellator. 
+            SMBShield exists because every business deserves enterprise-grade threat intelligence — without the enterprise price tag.
           </p>
 
           {/* Company Logos */}

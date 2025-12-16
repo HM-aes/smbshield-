@@ -551,8 +551,8 @@ export function AIGuardianRiskCard() {
 
   // Split title into characters for animation
   const titleText =
-    "The New Threat Landscape: Real AI Risks That Hit SMBs Today";
-  const titleParts = titleText.split("Real AI Risks");
+    "What SMBShield Delivers Every Week";
+  const titleParts = titleText.split("Delivers");
 
   return (
     <section
@@ -560,7 +560,7 @@ export function AIGuardianRiskCard() {
       className="relative w-full bg-gray-950 py-24"
     >
       {/* Background accents */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-900/20 via-transparent to-transparent" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
 
       {/* Animated particles - fixed positions to avoid hydration error */}
@@ -571,7 +571,7 @@ export function AIGuardianRiskCard() {
         ].map((left, i) => (
           <div
             key={i}
-            className="absolute h-1 w-1 rounded-full bg-blue-500/30"
+            className="absolute h-1 w-1 rounded-full bg-amber-500/30"
             style={{
               left: `${left}%`,
               top: `${(i * 5) % 100}%`,
@@ -585,26 +585,31 @@ export function AIGuardianRiskCard() {
       <div className="container relative mx-auto px-4 max-w-7xl">
         {/* Section Header */}
         <div className="mb-16 text-center mx-auto max-w-5xl">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-2">
+            <span className="h-2 w-2 rounded-full bg-amber-400 animate-pulse" />
+            <span className="text-sm font-medium text-amber-400">Your Weekly Security Intel</span>
+          </div>
           <h2
             ref={titleRef}
             className="mb-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl leading-tight"
             style={{ perspective: "1000px" }}
           >
-            The New Threat Landscape Real AI Risks That Hit SMBs Today
+            What SMBShield{" "}
+            <span className="bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text text-transparent">
+              Delivers
+            </span>{" "}
+            Every Week
           </h2>
           <p className="intro-text mx-auto max-w-4xl text-lg leading-relaxed text-gray-300">
-            Generative AI is a powerful tool, but it has introduced a new class
-            of security vulnerabilities. These aren't just theoretical exploits;
-            they are{" "}
-            <span className="font-semibold text-white">
-              direct attack vectors
+            No more drowning in security jargon. We monitor{" "}
+            <span className="font-semibold text-amber-400">
+              127 threat sources
             </span>{" "}
-            that can compromise your data, finances, and reputation. We
-            translate the most critical threats—the{" "}
+            including OWASP, NVD, and AI security researchers to bring you{" "}
             <span className="font-semibold text-white">
-              OWASP Top 10 for LLM Applications
-            </span>
-            —into clear, actionable risks for your business.
+              actionable intelligence
+            </span>{" "}
+            tailored for European SMBs. Here's what you get:
           </p>
         </div>
 
@@ -617,7 +622,7 @@ export function AIGuardianRiskCard() {
           {/* Navigation Arrows - Outside the flipping card */}
           <button
             onClick={handlePrev}
-            className="absolute left-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-gradient-to-r from-gray-800/80 to-gray-700/80 p-3 text-white backdrop-blur-sm transition-all hover:scale-125 hover:from-blue-600 hover:to-blue-500 hover:shadow-lg hover:shadow-blue-500/50"
+            className="absolute left-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-gradient-to-r from-gray-800/80 to-gray-700/80 p-3 text-white backdrop-blur-sm transition-all hover:scale-125 hover:from-amber-600 hover:to-amber-500 hover:shadow-lg hover:shadow-amber-500/50"
             aria-label="Previous risk"
           >
             <ChevronLeft className="h-6 w-6" />
@@ -625,7 +630,7 @@ export function AIGuardianRiskCard() {
 
           <button
             onClick={handleNext}
-            className="absolute right-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-gradient-to-r from-gray-800/80 to-gray-700/80 p-3 text-white backdrop-blur-sm transition-all hover:scale-125 hover:from-blue-600 hover:to-blue-500 hover:shadow-lg hover:shadow-blue-500/50"
+            className="absolute right-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-gradient-to-r from-gray-800/80 to-gray-700/80 p-3 text-white backdrop-blur-sm transition-all hover:scale-125 hover:from-amber-600 hover:to-amber-500 hover:shadow-lg hover:shadow-amber-500/50"
             aria-label="Next risk"
           >
             <ChevronRight className="h-6 w-6" />
@@ -646,7 +651,7 @@ export function AIGuardianRiskCard() {
               className="pointer-events-none absolute inset-0 z-10 opacity-40 transition-opacity group-hover:opacity-60"
               style={{
                 background:
-                  "radial-gradient(600px circle at 50% 50%, rgba(59, 130, 246, 0.25), transparent 50%)",
+                  "radial-gradient(600px circle at 50% 50%, rgba(217, 119, 6, 0.25), transparent 50%)",
               }}
             />
 
@@ -687,8 +692,8 @@ export function AIGuardianRiskCard() {
               {/* Solution Teaser */}
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <div className="h-1 w-12 bg-gradient-to-r from-blue-500 to-cyan-500 shadow-lg shadow-blue-500/50" />
-                  <span className="text-sm font-semibold uppercase tracking-wider text-blue-400">
+                  <div className="h-1 w-12 bg-gradient-to-r from-amber-500 to-amber-400 shadow-lg shadow-amber-500/50" />
+                  <span className="text-sm font-semibold uppercase tracking-wider text-amber-400">
                     Your Shield
                   </span>
                 </div>

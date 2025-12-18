@@ -1,8 +1,9 @@
 "use client"
 
 import * as React from "react"
+import Link from "next/link"
 import { motion } from "framer-motion"
-import { Bot, Send, User, Sparkles } from "lucide-react"
+import { Bot, Send, User, Sparkles, ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -74,6 +75,15 @@ export default function ChatPage() {
         animate={{ opacity: 1, y: 0 }}
         className="mb-6"
       >
+        {/* Back Navigation */}
+        <Link
+          href="/dashboard"
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-4"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          <span>← Dashboard</span>
+        </Link>
+
         <div className="flex items-center gap-3">
           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
             <Bot className="h-6 w-6 text-primary" />

@@ -17,11 +17,18 @@ import {
   ChevronLeft,
   ChevronRight,
   Shield,
+  ArrowLeft,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useUser } from "@/contexts/user-context"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 interface NavItem {
   title: string
@@ -53,18 +60,36 @@ export function Sidebar() {
       )}
     >
       <div className="flex h-full flex-col">
-        {/* Logo */}
+        {/* Logo - Links to Homepage with Tooltip */}
         <div className="flex h-16 items-center justify-between border-b px-4">
           {!collapsed && (
-            <Link href="/dashboard" className="flex items-center gap-2">
-              <Shield className="h-8 w-8 text-primary" />
-              <span className="font-bold text-lg">SMBShield</span>
-            </Link>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    <Shield className="h-8 w-8 text-primary" />
+                    <span className="font-bold text-lg">SMBShield</span>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent side="bottom">
+                  <p>Go to Homepage</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           )}
           {collapsed && (
-            <Link href="/dashboard" className="mx-auto">
-              <Shield className="h-8 w-8 text-primary" />
-            </Link>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link href="/" className="mx-auto hover:opacity-80 transition-opacity">
+                    <Shield className="h-8 w-8 text-primary" />
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent side="right">
+                  <p>Go to Homepage</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           )}
           <Button
             variant="ghost"
@@ -76,9 +101,27 @@ export function Sidebar() {
           </Button>
         </div>
 
+        {/* Prominent Back to Main Site Link */}
+        <Link
+          href="/"
+          className={cn(
+            "flex items-center gap-2 mx-3 mt-3 px-3 py-2.5 rounded-lg",
+            "bg-primary/10 hover:bg-primary/20 text-primary",
+            "border border-primary/30 hover:border-primary/50",
+            "hover:shadow-md hover:shadow-primary/10",
+            "transition-all duration-200",
+            collapsed && "justify-center mx-2 px-2"
+          )}
+        >
+          <ArrowLeft className="h-4 w-4 shrink-0" />
+          {!collapsed && (
+            <span className="text-sm font-medium">Back to Main Site</span>
+          )}
+        </Link>
+
         {/* Tier Badge */}
         {!collapsed && (
-          <div className="border-b p-4">
+          <div className="border-b p-4 mt-3">
             <div className="flex items-center justify-between">
               <Badge
                 variant={isPro ? "default" : "secondary"}

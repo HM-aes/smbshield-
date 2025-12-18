@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { BookOpen, Shield, CheckCircle, Lock, ArrowRight, Clock } from "lucide-react"
+import { BookOpen, Shield, CheckCircle, Lock, ArrowRight, ArrowLeft, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -113,6 +113,15 @@ export default function OWASPPage() {
         animate={{ opacity: 1, y: 0 }}
         className="mb-8"
       >
+        {/* Back Navigation */}
+        <Link
+          href="/dashboard"
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-4"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          <span>← Dashboard</span>
+        </Link>
+
         <div className="flex items-center gap-3 mb-2">
           <BookOpen className="h-8 w-8 text-primary" />
           <h1 className="text-2xl font-bold">OWASP Top 10 Learning</h1>

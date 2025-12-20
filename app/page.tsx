@@ -11,21 +11,69 @@ import { CTASection } from "@/components/home/cta-section";
 import { ContactSection } from "@/components/home/contact-section";
 import { PageTransition } from "@/components/transitions/page-transition";
 import { OwaspTeaser } from "@/components/home/owasp-teaser";
+import { SectionDivider } from "@/components/animated/section-divider";
+import { SectionReveal } from "@/components/animated/section-reveal";
 
 export default function HomePage() {
   return (
     <PageTransition>
       <div className="flex flex-col">
+        {/* Hero - No divider before, full animation in component */}
         <HeroSection />
-        <FounderCredibility />
-        <AIGuardianRiskCard />
-        <GenAiManifesto />
-        <TechStackGrid />
-        <FeatureFeed />
-        <CTASection />
-        <OwaspTeaser />
-        <PricingSection />
-        <ContactSection />
+
+        <SectionDivider variant="gradient" />
+
+        <SectionReveal>
+          <FounderCredibility />
+        </SectionReveal>
+
+        <SectionDivider variant="gradient" />
+
+        <SectionReveal delay={0.1}>
+          <AIGuardianRiskCard />
+        </SectionReveal>
+
+        <SectionDivider variant="gradient" />
+
+        <SectionReveal delay={0.1}>
+          <GenAiManifesto />
+        </SectionReveal>
+
+        <SectionDivider variant="gradient" showAccent={false} />
+
+        <SectionReveal delay={0.1}>
+          <TechStackGrid />
+        </SectionReveal>
+
+        <SectionDivider variant="gradient" />
+
+        <SectionReveal delay={0.1}>
+          <FeatureFeed />
+        </SectionReveal>
+
+        <SectionDivider variant="glow" />
+
+        <SectionReveal delay={0.1}>
+          <CTASection />
+        </SectionReveal>
+
+        <SectionDivider variant="gradient" />
+
+        <SectionReveal delay={0.1}>
+          <OwaspTeaser />
+        </SectionReveal>
+
+        <SectionDivider variant="gradient" />
+
+        <SectionReveal delay={0.1}>
+          <PricingSection />
+        </SectionReveal>
+
+        <SectionDivider variant="glow" />
+
+        <SectionReveal delay={0.1}>
+          <ContactSection />
+        </SectionReveal>
       </div>
     </PageTransition>
   );

@@ -11,7 +11,7 @@ SMBShield Complete UI is a Next.js 16 marketing site and dashboard for an AI-pow
 ```bash
 npm install          # Install dependencies
 npm run dev          # Development server (localhost:3000)
-npm run build        # Production build (ignores TS/ESLint errors)
+npm run build        # Production build (ignores TS errors via next.config.js)
 npm run lint         # ESLint
 ```
 
@@ -24,15 +24,19 @@ NEXT_PUBLIC_API_URL=http://localhost:8000
 
 ## Architecture
 
-### Dual Layout System
+### Triple Layout System
 
-**Marketing pages** (`/`, `/about`, `/blog/*`, `/resources/*`):
+**Marketing pages** (`/`, `/about`, `/blog/*`, `/resources/*`, `/industries/*`):
 - Use `app/layout.tsx` with ThemeProvider + Navbar + Footer + ScrollProgress
 
-**Dashboard pages** (`/dashboard/*`):
+**Dashboard V1** (`/dashboard/*`):
 - Use `app/dashboard/layout.tsx` with UserProvider + Sidebar + PageTransition
 - Self-contained (no root navbar/footer)
-- Client components with `"use client"` directive
+
+**Dashboard V2** (`/dashboard-v2/*`):
+- Use `app/dashboard-v2/layout.tsx` with 3-panel layout (sidebar + main + AI chat)
+- Components in `components/dashboard-v2/` with glass morphism design
+- Routes: dashboard, library, owasp, news, alerts, settings
 
 ### Key Patterns
 
@@ -41,6 +45,7 @@ NEXT_PUBLIC_API_URL=http://localhost:8000
 <FadeIn triggerOnScroll={true} delay={0.2}>
 <StaggerContainer staggerDelay={0.1}>
 <ScaleHover scale={1.02} liftDistance={-4}>
+<AnimatedCounter from={0} to={100} />
 ```
 
 **User Tier System**: Dashboard simulates freemium tiers (guest/free/pro):
@@ -55,14 +60,15 @@ import { chatWithTutor, getQuickTip, checkBackendHealth } from "@/lib/api"
 
 **Path Alias**: `@/*` maps to project root
 
-### Key Files
+### Route Structure
 
-- `components/ui/` - shadcn/ui primitives (locally installed, customizable)
-- `components/animated/` - Framer Motion wrappers (FadeIn, StaggerContainer, ScaleHover)
-- `components/dashboard/app-sidebar.tsx` - Dashboard navigation (~1000 lines)
-- `contexts/user-context.tsx` - User state (tier, name, email in localStorage)
-- `lib/api.ts` - Backend API client
-- `tailwind.config.ts` - Custom animations (shimmer, glow, float, gradient)
+- `/` - Homepage
+- `/about` - About page
+- `/blog/*` - Blog listing and posts
+- `/resources/` - news, learn, tools, owasp-top-10, owasp-top-10-llm
+- `/industries/` - ecommerce, saas, professional-services
+- `/dashboard/*` - V1 dashboard
+- `/dashboard-v2/*` - V2 dashboard with AI chat panel
 
 ## Critical Rules
 

@@ -17,22 +17,22 @@ function VulnerableChat() {
       }} />
 
       {/* Chat Header */}
-      <div className="relative flex items-center justify-between border-b border-neutral-800 bg-neutral-950/80 backdrop-blur-sm px-5 py-4">
+      <div className="relative flex items-center justify-between border-b border-border bg-background/80 backdrop-blur-sm px-5 py-4">
         <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-800 ring-1 ring-neutral-700">
-            <Bot className="h-5 w-5 text-neutral-400" />
+          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-muted ring-1 ring-neutral-700">
+            <Bot className="h-5 w-5 text-muted-foreground" />
           </div>
           <div>
             <span className="text-sm font-semibold bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-500">
               Internal Corp Assistant
             </span>
-            <div className="flex items-center gap-1.5 text-xs text-neutral-500">
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
               <span className="h-1.5 w-1.5 rounded-full bg-neutral-600 animate-pulse" />
               No Protection
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-2 rounded-full bg-neutral-800/50 px-3 py-1.5 text-xs font-semibold text-neutral-400 ring-1 ring-neutral-700">
+        <div className="flex items-center gap-2 rounded-full bg-muted/50 px-3 py-1.5 text-xs font-semibold text-muted-foreground ring-1 ring-neutral-700">
           <XCircle className="h-3.5 w-3.5" />
           VULNERABLE
         </div>
@@ -44,13 +44,13 @@ function VulnerableChat() {
         <div className="flex justify-end">
           <div className="max-w-[85%] space-y-1.5">
             <div className="flex items-center justify-end gap-2">
-              <span className="text-xs text-neutral-500">You</span>
-              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-neutral-800">
-                <User className="h-3.5 w-3.5 text-neutral-400" />
+              <span className="text-xs text-muted-foreground">You</span>
+              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-muted">
+                <User className="h-3.5 w-3.5 text-muted-foreground" />
               </div>
             </div>
             <div className="rounded-2xl rounded-tr-sm bg-white/5 backdrop-blur-sm px-4 py-3 ring-1 ring-white/10">
-              <p className="text-sm text-neutral-300 leading-relaxed">{attackPrompt}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{attackPrompt}</p>
             </div>
           </div>
         </div>
@@ -126,10 +126,10 @@ function VulnerableChat() {
       </div>
 
       {/* Status Bar */}
-      <div className="relative border-t border-neutral-800 bg-neutral-950/80 backdrop-blur-sm px-5 py-3">
+      <div className="relative border-t border-border bg-background/80 backdrop-blur-sm px-5 py-3">
         <div className="flex items-center gap-2">
-          <XCircle className="h-4 w-4 text-neutral-500" />
-          <span className="text-xs font-semibold text-neutral-400">
+          <XCircle className="h-4 w-4 text-muted-foreground" />
+          <span className="text-xs font-semibold text-muted-foreground">
             SYSTEM VULNERABLE: Data Exfiltration Detected
           </span>
         </div>
@@ -149,7 +149,7 @@ function SecureChat() {
       }} />
 
       {/* Chat Header */}
-      <div className="relative flex items-center justify-between border-b border-neutral-800 bg-neutral-950/80 backdrop-blur-sm px-5 py-4">
+      <div className="relative flex items-center justify-between border-b border-border bg-background/80 backdrop-blur-sm px-5 py-4">
         <div className="flex items-center gap-3">
           <div className="flex h-9 w-9 items-center justify-center rounded-full bg-cyan-500/10 ring-1 ring-cyan-500/20 shadow-[0_0_15px_rgba(6,182,212,0.2)]">
             <Bot className="h-5 w-5 text-cyan-400" />
@@ -164,7 +164,7 @@ function SecureChat() {
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-2 rounded-full bg-white/5 px-3 py-1.5 text-xs font-semibold text-neutral-300 ring-1 ring-white/10 backdrop-blur-sm">
+        <div className="flex items-center gap-2 rounded-full bg-white/5 px-3 py-1.5 text-xs font-semibold text-muted-foreground ring-1 ring-white/10 backdrop-blur-sm">
           <Shield className="h-3.5 w-3.5 text-cyan-400" />
           PROTECTED
         </div>
@@ -176,13 +176,13 @@ function SecureChat() {
         <div className="flex justify-end">
           <div className="max-w-[85%] space-y-1.5">
             <div className="flex items-center justify-end gap-2">
-              <span className="text-xs text-neutral-500">You</span>
-              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-neutral-800">
-                <User className="h-3.5 w-3.5 text-neutral-400" />
+              <span className="text-xs text-muted-foreground">You</span>
+              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-muted">
+                <User className="h-3.5 w-3.5 text-muted-foreground" />
               </div>
             </div>
             <div className="rounded-2xl rounded-tr-sm bg-white/5 backdrop-blur-sm px-4 py-3 ring-1 ring-white/10">
-              <p className="text-sm text-neutral-300 leading-relaxed">{attackPrompt}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{attackPrompt}</p>
             </div>
           </div>
         </div>
@@ -209,7 +209,7 @@ function SecureChat() {
                   </div>
                   <div>
                     <div className="text-xs font-semibold text-muted-foreground mb-1">Primary:</div>
-                    <p className="text-sm text-white leading-relaxed">
+                    <p className="text-sm text-foreground leading-relaxed">
                       Latest <span className="text-cyan-400 font-semibold">OWASP Top 10</span> for GenAI
                     </p>
                   </div>
@@ -222,7 +222,7 @@ function SecureChat() {
                   </div>
                   <div>
                     <div className="text-xs font-semibold text-muted-foreground mb-1">Tech:</div>
-                    <p className="text-sm text-white leading-relaxed">
+                    <p className="text-sm text-foreground leading-relaxed">
                       <span className="text-cyan-400 font-semibold">Pydantic AI</span> & Agent Best Practices
                     </p>
                   </div>
@@ -235,7 +235,7 @@ function SecureChat() {
                   </div>
                   <div>
                     <div className="text-xs font-semibold text-muted-foreground mb-1">News:</div>
-                    <p className="text-sm text-white leading-relaxed">
+                    <p className="text-sm text-foreground leading-relaxed">
                       Curated Threat Digest
                     </p>
                   </div>
@@ -258,10 +258,10 @@ function SecureChat() {
       </div>
 
       {/* Status Bar */}
-      <div className="relative border-t border-neutral-800 bg-neutral-950/80 backdrop-blur-sm px-5 py-3">
+      <div className="relative border-t border-border bg-background/80 backdrop-blur-sm px-5 py-3">
         <div className="flex items-center gap-2">
           <Shield className="h-4 w-4 text-cyan-400" />
-          <span className="text-xs font-semibold text-neutral-300">
+          <span className="text-xs font-semibold text-muted-foreground">
             SMBSHIELD ACTIVE: Prompt Injection Blocked
           </span>
         </div>
@@ -326,10 +326,10 @@ export function SecurityComparison() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-center mt-6 text-sm text-neutral-500"
+          className="text-center mt-6 text-sm text-muted-foreground"
         >
           <span className="inline-flex items-center gap-2">
-            <span className="text-neutral-400">← Vulnerable</span>
+            <span className="text-muted-foreground">← Vulnerable</span>
             <span className="text-neutral-700">|</span>
             <span>Drag to compare</span>
             <span className="text-neutral-700">|</span>

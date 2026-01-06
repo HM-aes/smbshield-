@@ -65,26 +65,26 @@ const sections = [
 
 export const GenAiManifesto = () => {
   return (
-    <section className="w-full py-20 bg-neutral-950 relative overflow-hidden">
+    <section className="w-full py-20 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Glassmorphism Card Container */}
         <div className="max-w-4xl mx-auto">
           {/* Header Section - Inside Card */}
           <div className="mb-8 text-center">
             <h2
-              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6"
               style={{ fontFamily: "Tahoma, sans-serif" }}
             >
               The State of GenAI Security
             </h2>
-            <p className="text-xl md:text-2xl text-neutral-300 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
               We are witnessing a massive shift. Tech is moving fast, and
               businesses are rushing to adapt. We believe every SMB deserves to
               understand the risks—not as a technical hurdle, but as a necessary
               step to protect your growth.
             </p>
           </div>
-          <div className="relative rounded-3xl border border-white/10 bg-neutral-950/80 backdrop-blur-xl overflow-hidden shadow-2xl p-8 md:p-12">
+          <div className="relative rounded-3xl border border-border bg-card/80 backdrop-blur-xl overflow-hidden shadow-2xl p-8 md:p-12">
             {/* Timeline Container */}
             <div className="relative">
               {/* Vertical Line connecting icons */}
@@ -114,19 +114,19 @@ export const GenAiManifesto = () => {
                         </div>
                         {/* Timeline dot connection (mobile) */}
                         {!isLast && (
-                          <div className="absolute left-1/2 top-16 w-0.5 h-12 bg-gradient-to-b from-neutral-700 to-neutral-800 md:hidden transform -translate-x-1/2" />
+                          <div className="absolute left-1/2 top-16 w-0.5 h-12 bg-gradient-to-b from-border to-border/50 md:hidden transform -translate-x-1/2" />
                         )}
                       </div>
 
                       {/* Content */}
                       <div className="flex-1 pt-1">
-                        <div className="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-2">
+                        <div className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-2">
                           {section.subtitle}
                         </div>
                         <h3 className="text-2xl font-bold text-foreground mb-4">
                           {section.title}
                         </h3>
-                        <p className="text-base md:text-lg text-neutral-400 leading-relaxed">
+                        <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                           {section.description
                             .split(/(\*\*.*?\*\*|\*[^*]+\*)/)
                             .map((part, i) => {
@@ -138,7 +138,7 @@ export const GenAiManifesto = () => {
                                 return (
                                   <strong
                                     key={i}
-                                    className="text-white font-semibold"
+                                    className="text-foreground font-semibold"
                                   >
                                     {boldText}
                                   </strong>
@@ -153,7 +153,7 @@ export const GenAiManifesto = () => {
                                 return (
                                   <em
                                     key={i}
-                                    className="text-neutral-300 italic"
+                                    className="text-muted-foreground italic"
                                   >
                                     {italicText}
                                   </em>
@@ -175,7 +175,7 @@ export const GenAiManifesto = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5, duration: 0.5 }}
-              className="mt-20 pt-8 border-t border-neutral-800 text-center"
+              className="mt-20 pt-8 border-t border-border text-center"
             >
               <Button size="lg" asChild className="px-8">
                 <a href="/dashboard">

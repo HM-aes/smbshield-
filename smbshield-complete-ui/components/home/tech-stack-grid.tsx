@@ -33,12 +33,12 @@ export function TechStackGrid() {
 
           {/* Tooltip Card Container */}
           <div 
-            className="relative rounded-3xl border border-white/10 shadow-2xl transition-all duration-500 group-hover:border-amber-500/20 group-hover:shadow-amber-500/10"
+            className="relative rounded-3xl border border-border shadow-2xl transition-all duration-500 group-hover:border-amber-500/20 group-hover:shadow-amber-500/10"
             style={{ backgroundColor: "#0a0a0a" }}
           >
             {/* Tooltip Pointer (Top Center) */}
             <div 
-              className="absolute -top-3 left-1/2 h-6 w-6 -translate-x-1/2 rotate-45 border-l border-t border-white/10 transition-colors duration-500 group-hover:border-amber-500/20"
+              className="absolute -top-3 left-1/2 h-6 w-6 -translate-x-1/2 rotate-45 border-l border-t border-border transition-colors duration-500 group-hover:border-amber-500/20"
               style={{ backgroundColor: "#0a0a0a" }}
             />
 

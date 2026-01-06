@@ -125,7 +125,7 @@ function GlassCard({ feature, index }: { feature: FeatureCard; index: number }) 
       />
 
       {/* Glass card */}
-      <div className="relative h-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-300 group-hover:border-white/20 group-hover:bg-white/[0.07]">
+      <div className="relative h-full overflow-hidden rounded-2xl border border-border bg-white/5 backdrop-blur-xl transition-all duration-300 group-hover:border-white/20 group-hover:bg-white/[0.07]">
         {/* Inner glow on hover */}
         <div
           className={`absolute inset-0 bg-gradient-to-br ${feature.accentColor} opacity-0 transition-opacity duration-500 group-hover:opacity-5`}

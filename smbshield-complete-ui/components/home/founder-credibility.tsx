@@ -216,7 +216,7 @@ export function FounderCredibility() {
                     </motion.div>
 
                     {/* ID Badge */}
-                    <div className="px-3 py-1 rounded-full bg-background/40 backdrop-blur-sm border border-white/10">
+                    <div className="px-3 py-1 rounded-full bg-background/40 backdrop-blur-sm border border-border">
                       <span className="text-xs font-mono font-semibold text-foreground">{item.id}</span>
                     </div>
 

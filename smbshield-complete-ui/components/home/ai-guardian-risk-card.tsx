@@ -130,7 +130,7 @@ const defenseContent = [
 
            {/* Security Alert Section */}
            <div className="mb-4">
-                <h4 className="font-bold text-sm mb-2 text-white">⚠️ Security Highlight</h4>
+                <h4 className="font-bold text-sm mb-2 text-foreground">⚠️ Security Highlight</h4>
                 <p className="text-sm text-muted-foreground mb-2">New detailed guide available for <span className="font-semibold text-red-400">CVE-2025-8821</span> affecting LangChain output parsers.</p>
                 <div className="text-blue-400 text-sm font-medium hover:underline cursor-pointer">Read full analysis →</div>
            </div>
@@ -172,9 +172,9 @@ const defenseContent = [
               <div className="flex-1 bg-purple-900/50 rounded-lg p-3 border border-purple-500/30">
                 <p className="text-gray-200 mb-2">Great question! For LLM integration, focus on these 3 OWASP risks:</p>
                 <div className="space-y-2 text-sm">
-                  <p className="text-red-400">🔴 <span className="text-white">LLM01 Prompt Injection</span> — Users could manipulate the AI</p>
-                  <p className="text-yellow-400">🟡 <span className="text-white">LLM06 Data Leakage</span> — Customer data in training</p>
-                  <p className="text-blue-400">🔵 <span className="text-white">LLM09 Overreliance</span> — Trusting AI without verification</p>
+                  <p className="text-red-400">🔴 <span className="text-foreground">LLM01 Prompt Injection</span> — Users could manipulate the AI</p>
+                  <p className="text-yellow-400">🟡 <span className="text-foreground">LLM06 Data Leakage</span> — Customer data in training</p>
+                  <p className="text-blue-400">🔵 <span className="text-foreground">LLM09 Overreliance</span> — Trusting AI without verification</p>
                 </div>
                 <p className="text-purple-300 mt-3 text-sm">Want me to generate a 1-page executive summary for your CTO? 📄</p>
               </div>

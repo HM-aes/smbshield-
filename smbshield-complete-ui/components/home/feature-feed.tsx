@@ -67,7 +67,7 @@ export function FeatureFeed() {
               {/* Card 1: Shadow AI Monitor */}
               <motion.div
                 {...fadeInUp}
-                className="w-full max-w-xl group relative overflow-hidden rounded-2xl border border-white/10 bg-neutral-950 p-6 transition-all duration-300 hover:border-emerald-500/30 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)]"
+                className="w-full max-w-xl group relative overflow-hidden rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:border-emerald-500/30 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)]"
               >
                 <div className="absolute right-0 top-0 h-40 w-40 bg-emerald-500/5 blur-3xl" />
 
@@ -126,7 +126,7 @@ export function FeatureFeed() {
               {/* Card 2: Agent Guardrails */}
               <motion.div
                 {...fadeInUp}
-                className="w-full max-w-xl group relative overflow-hidden rounded-2xl border border-white/10 bg-neutral-950 p-6 transition-all duration-300 hover:border-indigo-500/30 hover:shadow-[0_0_30px_rgba(99,102,241,0.15)]"
+                className="w-full max-w-xl group relative overflow-hidden rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:border-indigo-500/30 hover:shadow-[0_0_30px_rgba(99,102,241,0.15)]"
               >
                 <div className="absolute right-0 top-0 h-40 w-40 bg-indigo-500/5 blur-3xl" />
 
@@ -202,7 +202,7 @@ export function FeatureFeed() {
               {/* Card 3: Weekly Threat Intel */}
               <motion.div
                 {...fadeInUp}
-                className="w-full max-w-xl group relative overflow-hidden rounded-2xl border border-white/10 bg-neutral-950 p-6 transition-all duration-300 hover:border-amber-500/30 hover:shadow-[0_0_30px_rgba(245,158,11,0.15)]"
+                className="w-full max-w-xl group relative overflow-hidden rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:border-amber-500/30 hover:shadow-[0_0_30px_rgba(245,158,11,0.15)]"
               >
                 <div className="absolute right-0 top-0 h-40 w-40 bg-amber-500/5 blur-3xl" />
 
@@ -221,7 +221,7 @@ export function FeatureFeed() {
                   </div>
 
                   {/* Dashboard Widget Mockup */}
-                  <div className="overflow-hidden rounded-xl border border-amber-500/20 bg-neutral-900">
+                  <div className="overflow-hidden rounded-xl border border-amber-500/20 bg-card">
                     <div className="border-b border-amber-500/20 bg-amber-500/5 px-4 py-3">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
@@ -294,7 +294,7 @@ export function FeatureFeed() {
               {/* Card 4: Curated Expert Insights */}
               <motion.div
                 {...fadeInUp}
-                className="w-full max-w-xl group relative overflow-hidden rounded-2xl border border-white/10 bg-neutral-950 p-6 transition-all duration-300 hover:border-purple-500/30 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)]"
+                className="w-full max-w-xl group relative overflow-hidden rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:border-purple-500/30 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)]"
               >
                 <div className="absolute right-0 top-0 h-40 w-40 bg-purple-500/5 blur-3xl" />
 
@@ -313,7 +313,7 @@ export function FeatureFeed() {
                   </div>
 
                   {/* Media Intelligence Feed */}
-                  <div className="overflow-hidden rounded-xl border border-white/10 bg-neutral-900">
+                  <div className="overflow-hidden rounded-xl border border-border bg-card">
                     {/* Video Player Mockup */}
                     <div className="relative aspect-video bg-gradient-to-br from-zinc-800 via-zinc-900 to-black">
                       {/* Abstract Stage Background */}
@@ -352,7 +352,7 @@ export function FeatureFeed() {
                     </div>
 
                     {/* Key Takeaways Section */}
-                    <div className="border-t border-white/10 bg-zinc-950/50 p-4">
+                    <div className="border-t border-border bg-zinc-950/50 p-4">
                       <div className="flex items-center gap-2 mb-3">
                         <FileText className="h-4 w-4 text-muted-foreground" />
                         <span className="text-sm font-semibold text-gray-200">Key Takeaways</span>

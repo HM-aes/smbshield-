@@ -49,7 +49,7 @@ export function WelcomeCard() {
       
       {/* Glassmorphism Card */}
       <div
-        className="relative overflow-hidden rounded-3xl border border-white/10 p-8 backdrop-blur-xl transition-all duration-500 group-hover:border-amber-500/30"
+        className="relative overflow-hidden rounded-3xl border border-border p-8 backdrop-blur-xl transition-all duration-500 group-hover:border-amber-500/30"
         style={{ 
           backgroundColor: "rgba(10, 10, 10, 0.7)",
           boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05)",

@@ -33,10 +33,10 @@ export function AttackSimulation() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative overflow-hidden rounded-xl border border-white/10 bg-background/50 backdrop-blur-xl shadow-2xl"
+          className="relative overflow-hidden rounded-xl border border-border bg-background/50 backdrop-blur-xl shadow-2xl"
         >
           {/* Terminal Header */}
-          <div className="flex items-center justify-between border-b border-white/10 bg-zinc-950/80 px-4 py-3 backdrop-blur">
+          <div className="flex items-center justify-between border-b border-border bg-zinc-950/80 px-4 py-3 backdrop-blur">
             <div className="flex items-center gap-2">
               <Terminal className="h-4 w-4 text-emerald-400" />
               <span className="font-mono text-xs text-muted-foreground">security_monitor.log</span>
@@ -176,7 +176,7 @@ export function AttackSimulation() {
           </div>
 
           {/* Bottom Status Bar */}
-          <div className="border-t border-white/10 bg-zinc-950/80 px-4 py-2 backdrop-blur">
+          <div className="border-t border-border bg-zinc-950/80 px-4 py-2 backdrop-blur">
             <div className="flex items-center justify-between text-xs">
               <div className="flex items-center gap-4 text-muted-foreground">
                 <div className="flex items-center gap-2">

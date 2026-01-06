@@ -54,11 +54,7 @@ export function HeroSection() {
           {/* Description */}
           <FadeIn delay={0.4} triggerOnScroll={false}>
             <p className="mb-10 text-base text-muted-foreground sm:text-lg lg:text-xl leading-relaxed">
-              From the OWASP LLM Top 10 to EU AI Act compliance — we monitor 127 threat sources
-              <br className="hidden sm:block" />
-              so you don't have to. Built by security specialists with
-              <br className="hidden sm:block" />
-              <span className="text-amber-500 font-medium">Google Trust & Safety</span> and <span className="text-amber-500 font-medium">Meta</span> backgrounds.
+              Every Monday, get the 3 AI threats that actually impact your business
             </p>
           </FadeIn>
 

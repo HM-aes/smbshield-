@@ -23,7 +23,6 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient"
-import { ThemeToggle } from "@/components/theme-toggle"
 import { cn } from "@/lib/utils"
 
 type NavChild = {
@@ -227,8 +226,8 @@ export function Navbar() {
                         className={cn(
                           "group inline-flex items-center px-4 py-2 text-sm tracking-wide transition-all duration-200",
                           isNavItemActive(item)
-                            ? "text-amber-500 dark:text-amber-400"
-                            : "text-muted-foreground hover:text-amber-500 dark:hover:text-amber-400"
+                            ? "text-amber-400"
+                            : "text-muted-foreground hover:text-amber-400"
                         )}
                       >
                         <span>{item.name}</span>
@@ -294,8 +293,8 @@ export function Navbar() {
                   className={cn(
                     "px-4 py-2 text-sm tracking-wide transition-all duration-200",
                     isNavItemActive(item)
-                      ? "text-amber-500 dark:text-amber-400"
-                      : "text-muted-foreground hover:text-amber-500 dark:hover:text-amber-400"
+                      ? "text-amber-400"
+                      : "text-muted-foreground hover:text-amber-400"
                   )}
                 >
                   <span className="flex items-center">
@@ -311,9 +310,8 @@ export function Navbar() {
             )}
           </div>
 
-          {/* Right side - Theme Toggle & CTA */}
+          {/* Right side - CTA */}
           <div className="hidden items-center space-x-3 md:flex">
-            <ThemeToggle />
             <Link href="/dashboard">
               <HoverBorderGradient
                 containerClassName="rounded-full"
@@ -326,7 +324,6 @@ export function Navbar() {
 
           {/* Mobile menu button */}
           <div className="flex items-center space-x-2 md:hidden">
-            <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"

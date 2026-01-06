@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/providers/theme-provider";
 import { ScrollProgress } from "@/components/animated/scroll-progress";
 import { SmoothScroll } from "@/components/animated/smooth-scroll";
 import { ScrollToTop } from "@/components/scroll-to-top";
@@ -89,29 +88,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <head>
         {/* JSON-LD Structured Data */}
         <JsonLd />
       </head>
       <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange={false}
-        >
-          <SmoothScroll>
-            <UserProvider>
-              <ScrollProgress />
-              <ScrollToTop />
-              <ExitIntentPopup />
-              <Navbar />
-              <main className="min-h-screen">{children}</main>
-              <Footer />
-            </UserProvider>
-          </SmoothScroll>
-        </ThemeProvider>
+        <SmoothScroll>
+          <UserProvider>
+            <ScrollProgress />
+            <ScrollToTop />
+            <ExitIntentPopup />
+            <Navbar />
+            <main className="min-h-screen">{children}</main>
+            <Footer />
+          </UserProvider>
+        </SmoothScroll>
       </body>
     </html>
   );

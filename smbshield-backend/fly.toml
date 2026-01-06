@@ -1,0 +1,60 @@
+# Fly.io deployment configuration for SMBShield API
+# Deploy with: fly deploy
+
+app = "smbshield-api"
+primary_region = "iad"  # US East (change to your preferred region)
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  # Non-secret environment variables
+  PROJECT_NAME = "SMBShield API"
+  DEBUG = "False"
+  API_V1_PREFIX = "/api/v1"
+  ALGORITHM = "HS256"
+  ACCESS_TOKEN_EXPIRE_MINUTES = "30"
+  REQUIRE_API_KEY = "False"  # Set to "True" if you want to require API keys
+
+  # CORS - update with your frontend URLs
+  ALLOWED_ORIGINS = "https://yourdomain.com,https://www.yourdomain.com"
+
+# Secrets (set with: fly secrets set KEY=value)
+# - SECRET_KEY
+# - GEMINI_API_KEY
+# - API_KEY (optional, for endpoint protection)
+# - SUPABASE_URL (optional, for future)
+# - SUPABASE_KEY (optional, for future)
+# - REDIS_URL (optional, for future)
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0  # Scale to zero when idle (cost saving)
+
+  [[http_service.checks]]
+    grace_period = "10s"
+    interval = "30s"
+    method = "GET"
+    timeout = "5s"
+    path = "/health/live"
+
+  [[http_service.checks]]
+    grace_period = "10s"
+    interval = "30s"
+    method = "GET"
+    timeout = "5s"
+    path = "/health/ready"
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 512  # Minimal for demo, increase for production
+
+# Uncomment for production with higher traffic
+# [[vm]]
+#   cpu_kind = "shared"
+#   cpus = 2
+#   memory_mb = 1024

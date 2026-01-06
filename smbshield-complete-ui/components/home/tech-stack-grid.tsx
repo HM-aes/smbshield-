@@ -18,7 +18,7 @@ export function TechStackGrid() {
               GenAI Security
             </span>
           </div>
-          <h2 className="mb-6 text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+          <h2 className="mb-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
             The New Workforce <br />
             <span className="bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 bg-clip-text text-transparent">
               AI Agents & LLMs
@@ -34,12 +34,12 @@ export function TechStackGrid() {
           {/* Tooltip Card Container */}
           <div 
             className="relative rounded-3xl border border-border shadow-2xl transition-all duration-500 group-hover:border-amber-500/20 group-hover:shadow-amber-500/10"
-            style={{ backgroundColor: "#0a0a0a" }}
+            className="bg-card"
           >
             {/* Tooltip Pointer (Top Center) */}
             <div 
               className="absolute -top-3 left-1/2 h-6 w-6 -translate-x-1/2 rotate-45 border-l border-t border-border transition-colors duration-500 group-hover:border-amber-500/20"
-              style={{ backgroundColor: "#0a0a0a" }}
+              className="bg-card"
             />
 
             {/* Content */}

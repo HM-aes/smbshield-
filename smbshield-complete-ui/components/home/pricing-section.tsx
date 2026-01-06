@@ -89,9 +89,8 @@ function PricingCard({ plan, billingCycle, index }: { plan: typeof pricingPlans[
         
         {/* Card - identical styling for both */}
         <div
-          className="relative flex h-full flex-col rounded-3xl border border-amber-500/20 p-8 transition-all duration-300 group-hover:border-amber-500/40"
-          style={{ 
-            backgroundColor: "#0a0a0a",
+          className="relative flex h-full flex-col rounded-3xl border border-amber-500/20 bg-card p-8 transition-all duration-300 group-hover:border-amber-500/40"
+          style={{
             transform: "translateZ(0)",
             transition: "transform 0.3s ease, box-shadow 0.3s ease",
           }}
@@ -192,7 +191,7 @@ export function PricingSection() {
               <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
               <span className="text-sm font-medium text-amber-400">Pricing</span>
             </div>
-            <h2 className="mb-4 text-4xl font-bold tracking-tight text-white md:text-5xl">
+            <h2 className="mb-4 text-4xl font-bold tracking-tight text-foreground md:text-5xl">
               Simple, transparent{" "}
               <span className="bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text text-transparent">
                 pricing

@@ -16,9 +16,8 @@ export function ContactSection() {
           <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-amber-500/20 via-amber-600/10 to-transparent opacity-0 blur-2xl transition-all duration-700 group-hover:opacity-100" />
 
           <div
-            className="relative rounded-3xl border border-border p-12 transition-all duration-500 group-hover:border-amber-500/30"
-            style={{ 
-              backgroundColor: "#0a0a0a",
+            className="relative rounded-3xl border border-border bg-card p-12 transition-all duration-500 group-hover:border-amber-500/30"
+            style={{
               transform: "translateZ(0)",
               transition: "transform 0.4s ease, box-shadow 0.4s ease",
             }}
@@ -37,7 +36,7 @@ export function ContactSection() {
             </div>
 
             {/* About Text */}
-            <h2 className="mb-4 text-3xl font-bold tracking-tight text-white md:text-4xl">
+            <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
               SMBShield
             </h2>
             <p className="mx-auto mb-8 max-w-lg text-lg leading-relaxed text-muted-foreground">
@@ -83,7 +82,7 @@ export function ContactSection() {
         </div>
 
         {/* Bottom decorative line */}
-        <div className="mx-auto mt-16 h-px w-1/2 bg-gradient-to-r from-transparent via-gray-800 to-transparent" />
+        <div className="mx-auto mt-16 h-px w-1/2 bg-gradient-to-r from-transparent via-border to-transparent" />
       </div>
     </section>
   );

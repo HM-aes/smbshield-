@@ -221,7 +221,7 @@ export function WhatWeOffer() {
         {/* Section Header - The BOOM */}
         <div className="mx-auto mb-16 max-w-4xl text-center md:mb-20">
           <FadeIn triggerOnScroll={true}>
-            <h2 className="mb-6 text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+            <h2 className="mb-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
               Security Intelligence,{" "}
               <span className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 bg-clip-text text-transparent">
                 Built for SMBs
@@ -232,8 +232,8 @@ export function WhatWeOffer() {
           <FadeIn triggerOnScroll={true} delay={0.2}>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl">
               We're security specialists from{" "}
-              <span className="text-white font-medium">Google Trust & Safety</span> and{" "}
-              <span className="text-white font-medium">Meta</span>, building the security
+              <span className="text-foreground font-medium">Google Trust & Safety</span> and{" "}
+              <span className="text-foreground font-medium">Meta</span>, building the security
               platform we wished existed when we worked with SMBs.
             </p>
           </FadeIn>
